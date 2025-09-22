@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Banyo - Ana Sayfa | Modern Banyo Çözümleri</title>
+    <meta name="description" content="Craft Banyo olarak modern ve şık banyo çözümleri sunuyoruz. Salon, banyo, yatak odası ve özel tasarım mobilyalarımızla yaşam alanlarınızı güzelleştirin.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="public/craftlogo2.png" style="border-radius: 6px; width: 150px; height: auto; position: absolute;" alt="Craft Mobilya Logo" onerror="this.style.display='none'">
+       
+            </a>
+            
+            <ul class="nav-menu">
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        ÜRÜNLER <span class="dropdown-icon">▼</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="banyo.html" class="dropdown-item">Banyo</a>
+                        <a href="mutfak.html" class="dropdown-item">Mutfak</a>
+                        <a href="ickapi.html" class="dropdown-item">İç Kapı</a>
+                       
+                    </div>
+                </li>
+            
+              
+                <li class="nav-item">
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+                </li>
+            </ul>
+<!--             <img src="public/whatsapp.png" style="border-radius: 6px; width: 48px; height: 48px;" alt="Craft Mobilya Logo" onerror="this.style.display='none'">
+ -->
+            <a href="#teklif-formu" class="cta-button">Teklif Al</a>
+            
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Slider Section -->
+        <section class="hero-slider">
+            <!-- Sosyal Medya İkonları (Sol Kenarda) -->
+            <div class="social-sidebar" style="display: none;">
+                <div class="social-icons">
+                  <a href="#" class="social-icon" title="X (Twitter)">
+                    <img src="public/twitter.png" alt="X (Twitter)">
+                  </a>
+                  <a href="#" class="social-icon" title="Instagram">
+                    <img src="public/instagram.png" alt="Instagram">
+                  </a>
+                  <a href="#" class="social-icon" title="WhatsApp">
+                    <img src="public/whatsapp.png" alt="WhatsApp">
+                  </a>
+                  <a href="#" class="social-icon" title="YouTube">
+                    <img src="public/youtube.png" alt="YouTube">
+                  </a>
+                  <a href="#" class="social-icon" title="Facebook">
+                    <img src="public/facebook.png" alt="Facebook">
+                  </a>
+                  <a href="#" class="social-icon" title="LinkedIn">
+                    <img src="public/linkedln.png" alt="LinkedIn">
+                  </a>
+                  <a href="mailto:info@craftmobilya.com" class="social-icon" title="Mail">
+                    <img src="public/mail.png" alt="Mail">
+                  </a>
+                </div>
+              </div>
+              <style>
+           
+              </style>
+            
+
+            <!-- Ana Slider -->
+            <div class="slider-container">
+                <!-- Slide 1 -->
+                <div class="slide active" data-slide="1">
+                    <div class="slide-background" style="background-image: url('resimler/katalog/katalog/firuzeantrasit1.jpg');">
+                        <div class="slide-overlay"></div>
+                    </div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">Sizin için Çalışıyoruz</h1>
+                        <p class="slide-subtitle">Yenilikçi yaklaşımlar yeni nesil iç mimari</p>
+                        <a href="banyo.html" class="slide-button">Detaylar</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide" data-slide="2">
+                    <div class="slide-background" style="background-image: url('resimler/katalog/katalog/kelebek1.jpg');">
+                        <div class="slide-overlay"></div>
+                    </div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">Sıcak ve Mutlu Mekanlar Tasarlıyoruz</h1>
+                        <p class="slide-subtitle">Her detayda hissettiğimiz sıcaklık ve konfor</p>
+                        <a href="banyo.html" class="slide-button">Projelerimizi İnceleyin</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide" data-slide="3">
+                    <div class="slide-background" style="background-image: url('resimler/katalog/katalog/lotus1.jpg');">
+                        <div class="slide-overlay"></div>
+                    </div>
+                    <div class="slide-content">
+                        <h1 class="slide-title">Modern ve Sade Tasarımlar</h1>
+                        <p class="slide-subtitle">Minimalist çizgilerle maksimum etki</p>
+                        <a href="banyo.html" class="slide-button">Galeriyi Görüntüle</a>
+                    </div>
+                </div>
+
+                <!-- Slider Kontrolleri -->
+             <!--    <div class="slider-controls">
+                    <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+                </div> -->
+
+                <!-- Slider Göstergeleri -->
+                <div class="slider-indicators">
+                    <div class="scroll-indicator">
+                        <span>Aşağı Kaydır</span>
+                        <div class="scroll-arrow">↓</div>
+                    </div>
+                    <span class="indicator active" onclick="goToSlide(1)">01</span>
+                    <span class="indicator" onclick="goToSlide(2)">02</span>
+                    <span class="indicator" onclick="goToSlide(3)">03</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider Alt Kartları -->
+        <section class="slider-cards">
+            <div class="container">
+                <div class="grid grid-3" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="slider-card" onclick="goToSlide(1)">
+                        <div class="card-number">01</div>
+                        <h3>Sizin için Çalışıyoruz</h3>
+                        <p>Müşteri odaklı yaklaşımımızla her projeyi özenle tamamlıyoruz</p>
+                    </div>
+                    <div class="slider-card" onclick="goToSlide(2)">
+                        <div class="card-number">02</div>
+                        <h3>Sıcak ve Mutlu Mekanlar Tasarlıyoruz</h3>
+                        <p>Yaşam alanlarınızı sıcaklık ve mutlulukla dolduran tasarımlar</p>
+                    </div>
+                    <div class="slider-card" onclick="goToSlide(3)">
+                        <div class="card-number">03</div>
+                        <h3>Modern ve Sade Tasarımlar</h3>
+                        <p>Çağdaş çizgilerle zamansız estetik anlayışı</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hakkımızda Section -->
+        <section id="hakkimizda" class="section">
+            <div class="container">
+                <h2 class="section-title">Craft Mobilya Hakkında</h2>
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Misyonumuz</h3>
+                        <p>Craft Banyo, banyo yaşam alanlarını daha işlevsel ve daha estetik kılmak için üretim yapan, yerli bir tasarım-üretim markasıdır. Üç yıldır, kendi fabrikalarımızda kalite, dayanıklılık ve tutarlı teslimat odaklı çalışıyor; banyo mobilyaları, lavabo üniteleri, ayna ve depolama çözümlerinde modern çizgiyi akılcı detaylarla birleştiriyoruz.
+
+                            Markamızın arkasında “patronluktan” değil, tezgâhtan gelen iki kurucu ortak bulunuyor. Çocukluktan beri üretimin içinde yetişen bu ekip; sahadaki ustalık bilgisini, tasarım ve mühendislikle bir araya getirerek her gün daha iyi ürünler geliştirmeye odaklanıyor. Malzeme seçiminden montaj tekniğine, paketlemeden satış sonrası desteğe kadar tüm süreçleri aynı titizlikle yönetiyor; uzun ömürlü, bakımı kolay ve şık çözümler sunuyoruz.
+                            
+                            Craft Banyo olarak sözümüz net: Güvendiğimiz kaliteyi, erişilebilir ve sürdürülebilir bir üretim anlayışıyla müşterilerimize ulaştırmak. Bugün, Türkiye’nin dört bir yanında projelere değer katarken; yarının banyolarını daha düzenli, daha dayanıklı ve daha güzel kılmak için çalışmaya devam ediyoruz.</p>
+                    </div>
+                    <div>
+                        <img src="resimler/katalog/katalog/mini451.jpg" alt="Craft Mobilya Atölyesi" class="card-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hizmetler Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">HİZMETLER</h2>
+                <div class="grid grid-3">
+                    <div class="card">       <a href="banyo.html" class="card-link">
+                        <img src="resimler/katalog/katalog/loft1.jpg" alt="Craft Salon Mobilyaları" class="card-image">
+                        <h3 class="card-title">Banyo</h3>
+                        <p class="card-text">Modern ve şık salon mobilyaları ile yaşam alanınızı dönüştürün. TV üniteleri, koltuk takımları ve dekoratif ürünler.</p>
+                 Detayları Gör →</a>
+                    </div>
+                    <div class="card">     <a href="mutfak.html" class="card-link">
+                        <img src="resimler/katalog/katalog/mutfak1.jpg" alt="Craft Banyo Mobilyaları" class="card-image">
+                        <h3 class="card-title">Mutfak</h3>
+                        <p class="card-text">Su geçirmez malzemelerle üretilen banyo mobilyaları. Lavabo altı dolapları, banyo dolabı ve aksesuarları.</p>
+                   Detayları Gör →</a>
+                    </div>
+                    <div class="card"><a href="ickapi.html" class="card-link">
+                        <img src="resimler/katalog/katalog/ickapi1.webp" alt="Craft Yatak Odası" class="card-image">
+                        <h3 class="card-title">İç Kapı</h3>
+                        <p class="card-text">Konforlu uykular için özel tasarım yatak odası takımları. Gardırop, şifonyer ve yatak başlığı seçenekleri.</p>
+                        Detayları Gör →</a>
+                    </div>
+                   
+                </div>
+              
+            </div>
+        </section>
+
+        <!-- Teklif Formu Section -->
+        <section id="teklif-formu" class="section">
+            <div class="container">
+                <h2 class="section-title">Ücretsiz Teklif Alın</h2>
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Hayalinizdeki Mobilyaları Gerçekleştirin</h3>
+                        <p>Craft Mobilya uzmanları ile ücretsiz konsültasyon alın. Mekanınıza özel mobilya çözümleri için detaylı teklif hazırlıyoruz.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;">✓ Ücretsiz keşif ve ölçüm</li>
+                            <li style="margin-bottom: 12px;">✓ 3D tasarım ve görselleştirme</li>
+                            <li style="margin-bottom: 12px;">✓ Profesyonel montaj hizmeti</li>
+                            <li style="margin-bottom: 12px;">✓ 2 yıl garanti</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form class="form" name="teklifForm" method="POST" data-netlify="true" action="/thank-you" netlify-honeypot="bot-field">
+                            <!-- Honeypot alanı -->
+                            <input type="hidden" name="form-name" value="teklifForm">
+                            <p style="display:none;">
+                              <label>Bot field: <input name="bot-field" /></label>
+                            </p>
+                          
+                            <div class="form-group">
+                              <label for="ad-soyad" class="form-label">Ad Soyad *</label>
+                              <input type="text" id="ad-soyad" name="ad-soyad" class="form-input" required>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="telefon" class="form-label">Telefon *</label>
+                              <input type="tel" id="telefon" name="telefon" class="form-input" required>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="email" class="form-label">E-posta</label>
+                              <input type="email" id="email" name="email" class="form-input">
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="hizmet" class="form-label">İlgilendiğiniz Hizmet</label>
+                              <select id="hizmet" name="hizmet" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option value="banyo">Banyo</option>
+                                <option value="mutfak">Mutfak</option>
+                                <option value="ic-kapi">İç Kapı</option>
+                              </select>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="mesaj" class="form-label">Mesajınız</label>
+                              <textarea id="mesaj" name="mesaj" class="form-textarea" placeholder="Proje detaylarınızı, özel isteklerinizi paylaşın..."></textarea>
+                            </div>
+                          
+                            <button type="submit" class="form-button">Teklif Talebini Gönder</button>
+                          </form>
+                          
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Müşteri Yorumları Section -->
+ 
+
+        <!-- İletişim CTA Section -->
+        <section class="section">
+            <div class="container text-center">
+                <h2 class="section-title">Bizimle İletişime Geçin</h2>
+                <p class="mb-8">Craft Banyo uzmanları, projeleriniz için size yardımcı olmaya hazır. Hemen iletişime geçin ve ücretsiz konsültasyon alın.</p>
+                <div class="flex-center" style="gap: 20px; flex-wrap: wrap;">
+                    <a href="iletisim.html" class="cta-button">İletişim Bilgileri</a>
+                    <a href="tel:+902125551234" class="cta-button">(0533) 323 53 28</a>
+                     <a href="mailto:info@craftbanyo.cnet" class="cta-button">E-posta Gönder</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" style="text-align: center;">
+                    <h3>Craft Banyo</h3>
+                    <p>Modern yaşam alanları için özel tasarım mobilyalar üretiyoruz. Kalite, estetik ve fonksiyonelliği bir araya getiren ürünlerimizle hayalinizdeki mekanları yaratın.</p>
+                    <div class="social-links">
+                     
+                          <a href="#" class="social-icon" title="Instagram">
+                            <img src="public/instagram.png" alt="Instagram">
+                          </a>
+                          <a href="#" class="social-icon" title="WhatsApp">
+                            <img src="public/whatsapp.png" alt="WhatsApp">
+                          </a>
+                          <a href="#" class="social-icon" title="YouTube">
+                            <img src="public/youtube.png" alt="YouTube">
+                          </a>
+                          <a href="#" class="social-icon" title="Facebook">
+                            <img src="public/facebook.png" alt="Facebook">
+                          </a>
+                          
+                         
+                    </div>
+                </div>
+            
+                <div class="footer-section" style="text-align: center;">
+                    <h3>İletişim</h3>
+                    <p><strong>Merkez</strong> : Güngören Mahallesi, Zerdali Sokak, No:20A Çekmeköy, İstanbul</p>
+                    <p><strong>Fabrika </strong>: Yenimahalle Mahallesi, Küçüksu Caddesi, No:80A Beykoz, İstanbul</p>
+      
+                    <p> (0533) 323 53 28</p>
+                    <p> info@craftbanyo.net</p>
+                  
+                </div>
+            </div>
+            <section style="padding: 32px 0 0 0;">
+                <div class="container" style="border-radius:20px;overflow:hidden;box-shadow:0 2px 16px #0001;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d283.337620047571!2d29.22108059164239!3d41.02884468810212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cacf78a0684bf9%3A0x31a276c439d0d757!2sCraft%20Banyo!5e0!3m2!1str!2sus!4v1756067653423!5m2!1str!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </section>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Craft Banyo. Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a></p>
+            </div>
+        </div>
+    </footer>
+
+        
+    <script src="js/main.js"></script>
+</body>
+</html>

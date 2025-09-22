@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Craft Banyo | İç Kapı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Craft Banyo - Yaşam alanınız için modern, fonksiyonel ve şık Banyo çözümleri. Ölçüye özel, 3D tasarım ve profesyonel montaj. Teklif isteyin." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Craft Banyo | Modern Banyo Çözümleri" />
+  <meta property="og:description" content="Ölçüye özel, fonksiyonel ve şık Banyo çözümleri. Ücretsiz keşif, 3D tasarım ve profesyonel montaj." />
+  <meta property="og:type" content="product" />
+  <meta property="og:image" content="public/placeholder-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Sayfa içi stiller (mevcut CSS'inizi tamamlar) -->
+  <style>
+    :root{
+      --bg:#0f1115;
+      --card:#151821;
+      --muted:#7b8293;
+      --fg:#f5f7fb;
+      --pri:#3aa0ff;
+      --pri-2:#7cc4ff;
+      --ok:#24d17e;
+      --warn:#ffcc66;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    html{scroll-behavior:smooth;}
+    body{    background: linear-gradient(90deg, rgb(50 34 4), rgb(141, 110, 59), rgb(0, 0, 0));color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
+    .container{max-width:1120px;margin-inline:auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;text-decoration:none}
+  
+    .cta-button{    background: linear-gradient(135deg, #74623c, #ffdca4);color:#ffffff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:var(--shadow)}
+    .hero{background:linear-gradient(120deg,#10131a 0%,#0f1a28 100%);border-bottom:1px solid #1b2130}
+    .hero-inner{display:flex;flex-direction:column;gap:8px;min-height:180px;justify-content:center}
+    .breadcrumbs{color:var(--muted);font-size:.9rem}
+    .breadcrumbs a{color:var(--pri-2);text-decoration:none}
+    .hero h1{margin:0;font-size:2rem}
+    .badge{display:inline-flex;align-items:center;gap:6px;background:#112235;border:1px solid #1d3b58;color:#9fd1ff;padding:6px 10px;border-radius:999px;font-size:.88rem}
+    /* Ürün üst alanı */
+    .product{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+    @media (max-width: 920px){.product{grid-template-columns:1fr}}
+    .card{background:#02020282;border:1px solid #1b2130;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card.pad{padding:18px;gap:12px;}
+    /* Galeri */
+    .gallery{display:grid;gap:12px}
+    .gallery-main{aspect-ratio:4/4;background:#0b0e14;border-radius:12px;overflow:hidden;position:relative}
+    .gallery-main img{width:100%;height:100%;object-fit:cover;display:block}
+    .zoom-hint{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:8px;font-size:.85rem}
+    .thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+    @media (max-width:600px){.thumbs{grid-template-columns:repeat(5,1fr);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}}
+    .thumb{scroll-snap-align:start;border:1px solid #1b2130;border-radius:10px;overflow:hidden;cursor:pointer;opacity:.8;transition:.2s}
+    .thumb[aria-selected="true"], .thumb:hover{opacity:1;border-color:#2a8fff}
+    .thumb img{width:100%;height:70px;object-fit:cover;display:block}
+    /* Özet */
+    .summary{position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
+    .summary h2{margin:0}
+    .kpis{display:flex;gap:8px;flex-wrap:wrap}
+    .kpi{background:#101520;border:1px solid #1b2232;border-radius:10px;padding:10px 12px;font-size:.9rem;color:#cfe4ff}
+    .bullets{display:grid;gap:8px}
+    .bullets li{display:flex;gap:10px;align-items:flex-start;color:#e7ebf6}
+    .bullets li span{color:var(--ok)}
+    .sticky-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #2a394f}
+    .btn.primary{    background: linear-gradient(135deg, #74623c, #ffdca4);color:white;border-color:#3aa0ff}
+    .btn.ghost{background:transparent;color:#dbe7ff}
+    /* Sekmeler */
+    .tabs{margin-top:26px}
+    .tablist{display:flex;gap:8px;flex-wrap:wrap;justify-content: center;}
+    .tab{background:#1015203b;border:none;color:#cfd6e6;border-radius:999px;padding:10px 14px;cursor:pointer;font-size: 21px;}
+    .tab[aria-selected="true"]{border-color:#000000;}
+    .tabpanes{margin-top:14px}
+    .tabpane{display:none}
+    .tabpane.active{display:block}
+    .specs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:680px){.specs{grid-template-columns:1fr}}
+    .spec{background:#0000005c;border:1px solid #1b2232;border-radius:10px;padding:12px}
+    /* Renk / Malzeme */
+    .swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    .swatch{width:34px;height:34px;border-radius:8px;border:2px solid #1b2232;outline:2px solid transparent;cursor:pointer}
+    .swatch[aria-selected="true"]{outline-color:#2a8fff}
+    /* Form */
+    .section-title{text-align:center;margin:0 0 16px 0}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:920px){.form-grid{grid-template-columns:1fr}}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{color:#212122;font-size:.95rem}
+    .form-input,.form-select,.form-textarea{
+      background:#ffffff;border:1px solid #1c2432;color:#fff;border-radius:10px;padding:12px
+    }
+    .form-textarea{min-height:120px}
+    .form-button{    background: linear-gradient(135deg, #74623c, #ffdca4);color:white;border:0;border-radius:12px;padding:14px 16px;font-weight:800;cursor:pointer}
+    .help{color:white;font-size:.9rem}
+    /* Mobil alt sabit CTA */
+    .bar-cta{position:fixed;left:0;right:0;bottom:0;display:none;z-index:60;background:rgba(10,12,16,.9);backdrop-filter:blur(8px);border-top:1px solid #1b2130}
+    .bar-cta .inner{max-width:1120px;margin:auto;padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .bar-cta .btn{flex:1}
+    @media(max-width:920px){.bar-cta{display:block}}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:80}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px}
+    .lightbox .close{position:fixed;top:16px;right:16px;background:#0b0e14;border:1px solid #1b2130;color:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
+    /* Footer küçük iyileştirme */
+    .footer{border-top:1px solid #1b2130;margin-top:40px}
+     
+    /* HERO */
+    .hero{position:relative; isolation:isolate;}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-1;
+    background: linear-gradient(100deg, var(--copper-1) 0%, var(--copper-2) 55%, var(--copper-3) 100%);
+    mask: linear-gradient(#000 60%, transparent 100%);
+    }
+    .hero .hero-media{position:absolute; inset:0; z-index:-2; background:
+    linear-gradient(120deg, rgba(62,42,14,.40), rgba(27,19,11,.55)),
+    url('resimler/almira.jpg') center/cover no-repeat;
+    filter:saturate(1) contrast(1) brightness(.95);
+    }
+    .hero-wrap{min-height:420px; display:grid; place-items:center; padding:36px 0;align-items: end;}
+    .hero-card{color:#fff; text-align:center; padding:32px 28px; border-radius:var(--radius-lg);
+      background: linear-gradient(90deg, rgb(50 34 4), rgb(141, 110, 59), rgb(0, 0, 0)); border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 24px 60px rgba(0,0,0,.25); width:min(880px,92%);
+    }
+    .hero-kicker{display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border:1px solid rgba(255,255,255,.45); border-radius:999px; font-weight:700; letter-spacing:.3px; background:rgba(255,255,255,.08)}
+    .hero-title{font-size:clamp(32px, 5vw, 52px); line-height:1.05; margin:14px 0 8px; font-weight:850}
+    .hero-sub{opacity:.95; font-size:clamp(15px, 2.2vw, 18px)}
+    .hero-badges{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px}
+    .badge{background:rgba(255,255,255,.95); color:#6a4e2a; border:1px solid #eadfd3; padding:6px 10px; border-radius:999px; font-weight:800}
+    
+  </style>
+         <style>
+              
+          .social-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff00;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px #0001;
+            transition: transform .15s, box-shadow .2s;
+            overflow: hidden;
+          }
+          .social-icon img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            transition: filter 0.2s;
+          }
+          
+          .social-icon:hover {
+            transform: scale(1.12) rotate(-4deg);
+            box-shadow: 0 6px 24px #d2b18a99;
+            background: #faf6ee;
+          }
+          </style>
+  <!-- Yapılandırılmış veri -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Craft Banyo",
+    "image": ["https://example.com/urun-1.jpg","https://example.com/urun-2.jpg"],
+    "description": "Ölçüye özel modern Banyo çözümleri. Dayanıklı malzeme, fonksiyonel iç düzen ve profesyonel montaj.",
+    "brand": {"@type":"Brand","name":"Craft Banyo"},
+    "offers": {"@type":"Offer","priceCurrency":"TRY","availability":"https://schema.org/PreOrder","url":"https://www.craftBanyo.net/craft-Banyo.html"},
+    "category": "Home & Garden > Furniture > Cabinets & Storage"
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER (mevcut yapınız korunur) -->
+<header class="header" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76));">
+  <nav class="nav container">
+      <a href="index.html" class="logo">
+          <img src="public/craftlogo.png" style="border-radius: 12px;" alt="Craft Banyo Logo" onerror="this.style.display='none'">
+      </a>
+      
+      <ul class="nav-menu">
+          <li class="nav-item" style="display: none;">
+              <a href="#" class="nav-link">
+                  KURUMSAL <span class="dropdown-icon">▼</span>
+              </a>
+              <div class="dropdown">
+                  <a href="hakkimizda.html" class="dropdown-item">Hakkımızda</a>
+                  <a href="referanslar.html" class="dropdown-item">Referanslarımız</a>
+                  <a href="foto-galeri.html" class="dropdown-item">Foto Galeri</a>
+                  <a href="hizmetler.html" class="dropdown-item">Hizmetler</a>
+                  <a href="banka-hesaplari.html" class="dropdown-item">Banka Hesapları</a>
+                  <a href="projeler.html" class="dropdown-item">Projeler</a>
+              </div>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  ÜRÜNLER <span class="dropdown-icon">▼</span>
+              </a>
+              <div class="dropdown">
+                  <a href="banyo.html" class="dropdown-item">Banyo</a>
+                  <a href="mutfak.html" class="dropdown-item">Mutfak</a>
+                  <a href="ickapi.html" class="dropdown-item">İç Kapı</a>
+                 
+              </div>
+          </li>
+        
+          <li class="nav-item">
+              <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+          </li>
+      </ul>
+      
+      <a href="#teklif-formu" class="cta-button">Teklif Al</a>
+      
+      <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+  </nav>
+</header>
+
+<!-- HERO / Breadcrumb -->
+  <section class="hero" aria-label="Kapak">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-wrap">
+   
+    </div>
+  </section>
+
+<!-- ÜRÜN: Galeri + Özet -->
+<main class="container">
+  <section class="product" aria-labelledby="urun-baslik">
+    <!-- GALERİ -->
+    <div class="card pad">
+      <div class="gallery" aria-label="Ürün görsel galerisi">
+        <div class="gallery-main" id="galleryMain">
+          <!-- Ana görsel: KENDİ GÖRSELLERİNİZİ KOYUN -->
+          <img id="mainImage" src="resimler/katalog/katalog/ickapi2.webp" alt="Craft Banyo - Ana görsel" loading="eager" />
+          <div class="zoom-hint">Yakınlaştırmak için tıklayın</div>
+        </div>
+        <div class="thumbs" role="tablist" aria-label="Ürün küçük görselleri">
+          <!-- Küçük görseller: src değerlerini güncelleyin -->
+          <button class="thumb" role="tab" aria-selected="true" aria-controls="galleryMain">
+            <img src="resimler/katalog/katalog/ickapi2.webp" alt="Görsel 1" loading="lazy">
+          </button>
+      
+       
+        </div>
+      </div>
+      <!-- Malzeme / Renk örnekleri -->
+  
+    </div>
+
+    <!-- ÖZET / CTA -->
+    <aside class="summary">
+      <div class="card pad">
+        <h2 id="urun-baslik" style="margin-bottom:6px">İç Kapı</h2>
+        <div class="kpis">
+          <span class="kpi">Ücretsiz Keşif</span>
+      
+          <span class="kpi">Profesyonel Montaj</span>
+          <span class="kpi">2 Yıl Garanti</span>
+        </div>
+        <ul class="bullets">
+          <li><span>✓</span> Mekânınıza özel ölçü ve modülasyon</li>
+          <li><span>✓</span> Kişiselleştirilebilir iç düzen (çekmece, askı, raf)</li>
+          <li><span>✓</span> Dayanıklı malzeme ve modern kapak seçenekleri</li>
+          <li><span>✓</span> Hızlı teslim ve kurulum</li>
+        </ul>
+        <div class="sticky-cta">
+          <a class="btn primary" href="#teklif-formu">Teklif Al</a>
+        </div>
+      </div>
+      <div class="card pad">
+        <strong>İletişim Desteği</strong>
+        <p class="help">Projenizle ilgili hızlı destek için <a >(0533) 323 53 28</a> numaralı hattımızı arayabilirsiniz.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- SEKME İÇERİK: Açıklama / Özellikler / Ölçüler / Teslimat -->
+  <section class="tabs">
+    <div class="tablist" role="tablist" aria-label="Ürün Bilgileri">
+  
+      <button class="tab" role="tab" aria-selected="true" aria-controls="pane-ozellik" id="tab-ozellik">Özellikler</button>
+     
+
+    </div>
+
+    <div class="tabpanes">
+      <div class="tabpane" id="pane-aciklama" role="tabpanel" aria-labelledby="tab-aciklama">
+        <p>Craft Banyo; modern çizgileri, ölçüye özel üretimi ve fonksiyonel iç düzen alternatifleriyle yaşam alanlarınıza değer katar. Mekânınızın ihtiyaçlarına göre modüler çözümler sunar; çekmece, askı borusu, pantolonluk, ayakkabılık ve aydınlatma gibi seçeneklerle kişiselleştirilir.</p>
+      </div>
+
+      <div class="tabpane active" id="pane-ozellik" role="tabpanel" aria-labelledby="tab-ozellik">
+        <div class="specs">
+          <div class="spec"><strong>Gövde</strong><br>18/25 mm suntalam veya MDF-lam</div>
+          <div class="spec"><strong>Kapak</strong><br>Mentese/kapak frenli, sürgü opsiyonlu</div>
+          <div class="spec"><strong>Aksesuar</strong><br>Çekmece frenli ray, askı, raf</div>
+          <div class="spec"><strong>Yüzey</strong><br>Meşe, Ceviz, Antrasit, Buz Gri</div>
+          <div class="spec"><strong>Ölçü</strong><br>Tamamen projeye özel</div>
+          <div class="spec"><strong>Garanti</strong><br>24 Ay</div>
+        </div>
+      </div>
+
+      <div class="tabpane" id="pane-olcu" role="tabpanel" aria-labelledby="tab-olcu">
+        <p>Ölçülendirme ücretsiz keşif sonrası netleştirilir. Keşif ekibimiz <em>eni-boyu-yüksekliği</em> alır; Banyo içi modülasyon 3D üzerinde sunulur.</p>
+      </div>
+
+      <div class="tabpane" id="pane-teslimat" role="tabpanel" aria-labelledby="tab-teslimat">
+        <p>İstanbul içi teslimat ve montaj hizmetimiz mevcuttur. Proje büyüklüğüne göre termin süresi değişebilir. Montaj sürecinde alan koruması, hassas kurulum ve test yapılır.</p>
+      </div>
+
+      <div class="tabpane" id="pane-sss" role="tabpanel" aria-labelledby="tab-sss">
+        <details class="card pad"><summary><strong>Renk ve kaplama seçenekleri neler?</strong></summary><p>Meşe, Ceviz, Antrasit, Buz Gri gibi standart kaplamalar yanında projeye özel seçenekler de sunulur.</p></details>
+        <details class="card pad"><summary><strong>Ödeme ve tedarik süreci nasıl işler?</strong></summary><p>Keşif ve tasarım onayından sonra üretime geçilir. Teslim tarihinde montaj tamamlanır.</p></details>
+        <details class="card pad"><summary><strong>Garanti kapsamı nedir?</strong></summary><p>Üretim ve montaj kaynaklı kusurlar 24 ay garanti kapsamındadır.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- TEKLİF FORMU -->
+<section id="teklif-formu" class="container">
+   <div class="container">
+                <h2 class="section-title">Ücretsiz Teklif Alın</h2>
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Hayalinizdeki Mobilyaları Gerçekleştirin</h3>
+                        <p>Craft Mobilya uzmanları ile ücretsiz konsültasyon alın. Mekanınıza özel mobilya çözümleri için detaylı teklif hazırlıyoruz.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;">✓ Ücretsiz keşif ve ölçüm</li>
+                            <li style="margin-bottom: 12px;">✓ 3D tasarım ve görselleştirme</li>
+                            <li style="margin-bottom: 12px;">✓ Profesyonel montaj hizmeti</li>
+                            <li style="margin-bottom: 12px;">✓ 2 yıl garanti</li>
+                        </ul>
+                    </div>
+                    <div>
+                      <form class="form" name="teklifForm" method="POST" data-netlify="true" action="/thank-you" netlify-honeypot="bot-field">
+                        <!-- Honeypot alanı -->
+                        <input type="hidden" name="form-name" value="teklifForm">
+                        <p style="display:none;">
+                          <label>Bot field: <input name="bot-field" /></label>
+                        </p>
+                      
+                        <div class="form-group">
+                          <label for="ad-soyad" class="form-label">Ad Soyad *</label>
+                          <input type="text" id="ad-soyad" name="ad-soyad" class="form-input" required>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="telefon" class="form-label">Telefon *</label>
+                          <input type="tel" id="telefon" name="telefon" class="form-input" required>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="email" class="form-label">E-posta</label>
+                          <input type="email" id="email" name="email" class="form-input">
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="hizmet" class="form-label">İlgilendiğiniz Hizmet</label>
+                          <select id="hizmet" name="hizmet" class="form-select">
+                            <option value="">Seçiniz</option>
+                            <option value="banyo">Banyo</option>
+                            <option value="mutfak">Mutfak</option>
+                            <option value="ic-kapi">İç Kapı</option>
+                          </select>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="mesaj" class="form-label">Mesajınız</label>
+                          <textarea id="mesaj" name="mesaj" class="form-textarea" placeholder="Proje detaylarınızı, özel isteklerinizi paylaşın..."></textarea>
+                        </div>
+                      
+                        <button type="submit" class="form-button">Teklif Talebini Gönder</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<!-- Mobil sabit CTA -->
+<div class="bar-cta" aria-hidden="false">
+  <div class="inner">
+    <strong>Craft Banyo</strong>
+    <a class="btn primary" href="#teklif-formu">Teklif Al</a>
+  </div>
+</div>
+
+<!-- FOOTER (mevcut yapınız korunur) -->
+<footer class="footer">
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-section" style="text-align: center;">
+              <h3>Craft Mobilya</h3>
+              <p>Modern yaşam alanları için özel tasarım mobilyalar üretiyoruz. Kalite, estetik ve fonksiyonelliği bir araya getiren ürünlerimizle hayalinizdeki mekanları yaratın.</p>
+              <div class="social-links">
+               
+                    <a href="#" class="social-icon" title="Instagram">
+                      <img src="public/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-icon" title="WhatsApp">
+                      <img src="public/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="#" class="social-icon" title="YouTube">
+                      <img src="public/youtube.png" alt="YouTube">
+                    </a>
+                    <a href="#" class="social-icon" title="Facebook">
+                      <img src="public/facebook.png" alt="Facebook">
+                    </a>
+                    
+                   
+              </div>
+          </div>
+     
+          <div class="footer-section" style="text-align: center;">
+              <h3>İletişim</h3>
+              <p>Merkez : Çekmeköy, İstanbul</p>
+              <p>Fabrika : Beykoz, İstanbul</p>
+
+              <p> (0533) 323 53 28</p>
+              <p>info@craftbanyo.net</p>
+            
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2022 Craft Banyo. Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a> | <a href="#">Kullanım Şartları</a></p>
+      </div>
+  </div>
+</footer>
+
+<!-- JS: Galeri, Sekmeler, Lightbox -->
+<script>
+  // Küçük resim tıklanınca ana görsel güncelle
+  const mainImg = document.getElementById('mainImage');
+  document.querySelectorAll('.thumb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(b => b.setAttribute('aria-selected','false'));
+      btn.setAttribute('aria-selected','true');
+      const img = btn.querySelector('img');
+      if(img && img.src){ mainImg.src = img.src.replace('-600x450','-1200x900'); mainImg.alt = img.alt + ' - Ana görsel'; }
+      mainImg.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+
+  // Lightbox
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<button class="close" aria-label="Kapat">Kapat ✕</button><img alt="Büyük görsel" />';
+  document.body.appendChild(lb);
+  const lbImg = lb.querySelector('img');
+  const lbClose = lb.querySelector('.close');
+  function openLb(src, alt){ lbImg.src = src; lbImg.alt = alt || 'Büyük görsel'; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  document.getElementById('galleryMain').addEventListener('click',()=>openLb(mainImg.src, mainImg.alt));
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLb(); });
+
+  // Renk swatch seçimi
+  document.querySelectorAll('.swatch').forEach(s=>{
+    s.addEventListener('click', ()=>{
+      document.querySelectorAll('.swatch').forEach(x=>x.setAttribute('aria-selected','false'));
+      s.setAttribute('aria-selected','true');
+    });
+  });
+
+  // Sekmeler
+  const tabs = document.querySelectorAll('.tab');
+  const panes = document.querySelectorAll('.tabpane');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+      panes.forEach(p=>p.classList.remove('active'));
+      tab.setAttribute('aria-selected','true');
+      const pane = document.getElementById(tab.getAttribute('aria-controls'));
+      pane.classList.add('active');
+    });
+  });
+
+  // Form basit doğrulama mesajı (örn. debug)
+  const form = document.querySelector('#teklif-formu form');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      if(!form.checkValidity()){
+        // native HTML5 doğrulama uyandırılsın
+      }else{
+        // Burada kendi endpoint’inize POST edebilirsiniz
+        // e.preventDefault();
+      }
+    });
+  }
+</script>
+
+<!-- Varsayılan küçük main.js’iniz (menü vs) -->
+<script src="js/main.js"></script>
+</body>
+</html>
